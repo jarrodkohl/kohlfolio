@@ -4,7 +4,7 @@ export default [
     subtitle: "A web application that allows users to create content using Ai.",
     imgUrl: "assets/PromptAiScreen.png",
     stack: ["React", "JavaScript", "Node.js", "postgresSQL"],
-    link: "https://promptai.herokuapp.com/",
+    link: "https://github.com/jarrodkohl/promptAI",
     id: 1,
   },
   {
