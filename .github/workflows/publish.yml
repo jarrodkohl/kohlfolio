@@ -10,8 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Push
     steps:
-      - name: git-checkout
+      - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
       - name: Install all dependencies
         run: npm install
@@ -24,6 +29,6 @@ jobs:
         env:
           REPO: self
           BRANCH: build 
-          FOLDER: dist # The directory where assets are generated
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-          MESSAGE: "Build: ({sha}) {msg}" #  commit message
+          FOLDER: dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MESSAGE: "Build: ({sha}) {msg}"
